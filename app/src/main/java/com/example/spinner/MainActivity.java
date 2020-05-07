@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         mCitiesSpinner = findViewById(R.id.citiesSpinner);
         mHouseNumberSpinner = findViewById(R.id.houseNumberSpinner);
         mShowAddressBtn = findViewById(R.id.showAddressBtn);
-             initSpinnerCountries();
-             initHousNumbersSpinner();
+        initSpinnerCountries();
+        initHousNumbersSpinner();
 
         mShowAddressBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                                Toast.makeText(MainActivity.this
+                Toast.makeText(MainActivity.this
                         , mCountriesSpinner.getSelectedItem().toString()
                                 + " "
                                 + mCitiesSpinner.getSelectedItem().toString()
@@ -44,10 +44,11 @@ public class MainActivity extends AppCompatActivity {
                                 + mHouseNumberSpinner.getSelectedItem().toString()
                         , Toast.LENGTH_LONG)
                         .show();
+                clearSpinners();
             }
         });
 
-      }
+    }
 
     private void initHousNumbersSpinner() {
         Integer[] houseNumbers = new Integer[50];
@@ -76,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void clearSpinners() {
+        mCountriesSpinner.setSelection(0);
+        mCitiesSpinner.setSelection(0);
+        mHouseNumberSpinner.setSelection(0);
+    }
+
     private void initSpinnerCities(String country) {
         ArrayAdapter<CharSequence> adapter = null;
         switch (country) {
@@ -94,5 +101,4 @@ public class MainActivity extends AppCompatActivity {
             mCitiesSpinner.setAdapter(adapter);
         }
     }
-
 }

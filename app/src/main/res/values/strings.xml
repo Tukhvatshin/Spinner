@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Spinner</string>
     <string name="showAdress">Показать адрес</string>
-<string-array name="countries">
+    <string-array name="countries">
     <item>Россия</item>
     <item>Украина</item>
     <item>Белоруссия</item>
